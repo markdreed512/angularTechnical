@@ -5,9 +5,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RecaptchaModule } from 'ng-recaptcha';
 import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
 
-import { LayoutComponent } from './layout.component';
-import { LayoutRoutingModule } from './layout-routing.module';
-import { ContactComponent } from './contact/contact.component';
+import { ContactComponent } from './contact.component';
+import { ContactRoutingModule } from './contact-routing.module';
 
 @NgModule({
   imports: [
@@ -15,14 +14,13 @@ import { ContactComponent } from './contact/contact.component';
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
-    LayoutRoutingModule,
+    AboutRoutingModule,
     RecaptchaModule,
     RecaptchaFormsModule,
   ],
   declarations: [
-    LayoutComponent,
-    ContactComponent
+    AboutComponent
   ],
   providers: []
 })
-export class LayoutModule { }
+export class AboutModule { }
