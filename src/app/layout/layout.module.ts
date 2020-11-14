@@ -7,7 +7,7 @@ import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
 
 import { LayoutComponent } from './layout.component';
 import { LayoutRoutingModule } from './layout-routing.module';
-import { ContactComponent } from './contact/contact.component';
+// import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   imports: [
@@ -20,8 +20,8 @@ import { ContactComponent } from './contact/contact.component';
     RecaptchaFormsModule,
   ],
   declarations: [
-    LayoutComponent,
-    ContactComponent
+    LayoutComponent
+    // ContactComponent
   ],
   providers: []
 })

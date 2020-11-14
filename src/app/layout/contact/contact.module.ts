@@ -14,13 +14,13 @@ import { ContactRoutingModule } from './contact-routing.module';
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
-    AboutRoutingModule,
+    ContactRoutingModule,
     RecaptchaModule,
     RecaptchaFormsModule,
   ],
   declarations: [
-    AboutComponent
+    ContactComponent
   ],
   providers: []
 })
-export class AboutModule { }
+export class ContactModule { }
