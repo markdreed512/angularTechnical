@@ -18,7 +18,7 @@ export class ContactComponent {
   initializeForm(): void {
     this.contactForm = this.fb.group({
       name: [null, Validators.required],
-      email: [null, Validators.required, Validators.email],
+      email: [null, [Validators.required, Validators.email]],
       message: [null, Validators.required],
       shouldAddToNewsletter: [null]
     })
