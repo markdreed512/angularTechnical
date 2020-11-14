@@ -8,6 +8,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class ContactComponent {
   contactForm: FormGroup;
+  showMsg: boolean = false;
 
   constructor(private fb: FormBuilder) { }
 
@@ -28,12 +29,18 @@ export class ContactComponent {
     console.log(this.contactForm)
     console.log(this.contactForm.valid)
     if(this.contactForm.valid){
-      console.log("form submitted")
+      this.handleSubmit()
     }
     else{
       console.log("in onSubmit else")
       this.validateAllFormFields(this.contactForm);
     }
+  }
+
+  handleSubmit(){
+    console.log("handling submit...")
+    this.showMsg = true;
+    this.contactForm.reset();
   }
 
   validateAllFormFields(form) {

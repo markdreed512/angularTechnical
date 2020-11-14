@@ -6,7 +6,7 @@
             <input type="text" formControlName="name" >
             <app-display-error-component 
                 [displayError]="isFieldValid('name')" 
-                errorMsg="Name is Required">
+                errorMsg="Missing name">
             </app-display-error-component>
         </div>
     </div>
@@ -16,7 +16,7 @@
                 <input type="text" formControlName="email">
                 <app-display-error-component 
                     [displayError]="isFieldValid('email')" 
-                    errorMsg="Email is Required">
+                    errorMsg="Missing email in proper format">
                 </app-display-error-component>
         </div>
     </div>
@@ -26,7 +26,7 @@
                 <input type="text" formControlName="message">
                 <app-display-error-component 
                     [displayError]="isFieldValid('message')" 
-                    errorMsg="Message is Required">
+                    errorMsg="Missing message">
                 </app-display-error-component>
         </div>
     </div>
@@ -37,4 +37,13 @@
         </div>
     </div>
     <button class="btn btn-primary" (click)="onSubmit()">Submit</button>
+
+    <div class="row"  *ngIf="showMsg">
+        <div class="col-xs-12">
+          <p class="alert alert-success">
+              <strong>Thanks!!</strong> We'll get back to you soon!!
+
+          </p>
+        </div>
+      </div>
 </form>
