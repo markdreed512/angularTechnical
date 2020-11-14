@@ -1,20 +1,40 @@
 <h1>Contact</h1>
-<form>
-<label for="name">
-    Name:
-    <input type="text" placeholder="required">
-</label>
-<label for="email">
-    Email:
-    <input type="text" placeholder="required">
-</label>
-<label for="message">
-    Message:
-    <input type="text" placeholder="required">
-</label>
-<label for="newsletter">
-    Receive Newsletter
-    <input type="checkbox">
-</label>
-<button id="submit-btn">Submit</button>
+<form [formGroup]="contactForm" class="form-horizontal">
+    <div class="form-group" [ngClass]="displayFieldCss('name')">
+        <div class="col-sm-12">
+            <label for="name" class="control-label required">Name</label>
+            <input type="text" formControlName="name" >
+            <app-display-error-component 
+                [displayError]="isFieldValid('name')" 
+                errorMsg="Name is Required">
+            </app-display-error-component>
+        </div>
+    </div>
+    <div class="form-group" [ngClass]="displayFieldCss('email')">
+        <div class="col-sm-12">
+            <label for="email" class="control-label required">Email</label>
+                <input type="text" formControlName="email">
+                <app-display-error-component 
+                    [displayError]="isFieldValid('email')" 
+                    errorMsg="Email is Required">
+                </app-display-error-component>
+        </div>
+    </div>
+    <div class="form-group" [ngClass]="displayFieldCss('message')">
+        <div class="col-sm-12">
+            <label for="message" class="control-label required">Message</label>
+                <input type="text" formControlName="message">
+                <app-display-error-component 
+                    [displayError]="isFieldValid('message')" 
+                    errorMsg="Message is Required">
+                </app-display-error-component>
+        </div>
+    </div>
+    <div class="form-group" [ngClass]="displayFieldCss('shouldAddToNewsletter')">
+        <div class="col-sm-12">
+            <label for="newsletter">Subscribe to Newsletter</label>
+                <input type="checkbox" formControlName="shouldAddToNewsletter">
+        </div>
+    </div>
+    <button class="btn btn-primary" (click)="onSubmit()">Submit</button>
 </form>
