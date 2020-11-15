@@ -9,7 +9,10 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class ContactComponent {
   contactForm: FormGroup;
   showMsg: boolean = false;
-
+  name = 'Name';
+  email = "Email"
+  message = "Message"
+  
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {

@@ -1,9 +1,4 @@
-.control-label.required:after {
-    color: #d00;
-    content: "*";
-    /* position: absolute; */
-    margin-left: 5px;
-}
+
 
 .form-container{
     /* border: 1px solid green; */
@@ -21,8 +16,6 @@ form h1{
     text-align: center;
 }
 
-.text-input{
-    width: 100%;
-}
+
 
  
