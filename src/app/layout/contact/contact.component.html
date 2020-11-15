@@ -1,49 +1,46 @@
-<h1>Contact</h1>
-<form [formGroup]="contactForm" class="form-horizontal">
-    <div class="form-group" [ngClass]="displayFieldCss('name')">
-        <div class="col-sm-12">
-            <label for="name" class="control-label required">Name</label>
-            <input type="text" formControlName="name" >
-            <app-display-error-component 
-                [displayError]="isFieldValid('name')" 
-                errorMsg="Missing name">
-            </app-display-error-component>
+<div class="form-container">
+    <form [formGroup]="contactForm" class="form-horizontal">
+        <h1>Contact</h1>
+        <div class="form-group" [ngClass]="displayFieldCss('name')">
+            <div class="col-sm-12">
+                <label for="name" class="control-label required">Name</label><br>
+                <input type="text" formControlName="name" class="text-input">
+                <app-display-error-component [displayError]="isFieldValid('name')" errorMsg="Missing name">
+                </app-display-error-component>
+            </div>
         </div>
-    </div>
-    <div class="form-group" [ngClass]="displayFieldCss('email')">
-        <div class="col-sm-12">
-            <label for="email" class="control-label required">Email</label>
-                <input type="text" formControlName="email">
-                <app-display-error-component 
-                    [displayError]="isFieldValid('email')" 
+        <div class="form-group" [ngClass]="displayFieldCss('email')">
+            <div class="col-sm-12">
+                <label for="email" class="control-label required">Email</label><br>
+                <input type="text" formControlName="email" class="text-input">
+                <app-display-error-component [displayError]="isFieldValid('email')"
                     errorMsg="Missing email in proper format">
                 </app-display-error-component>
+            </div>
         </div>
-    </div>
-    <div class="form-group" [ngClass]="displayFieldCss('message')">
-        <div class="col-sm-12">
-            <label for="message" class="control-label required">Message</label>
-                <input type="text" formControlName="message">
-                <app-display-error-component 
-                    [displayError]="isFieldValid('message')" 
-                    errorMsg="Missing message">
+        <div class="form-group" [ngClass]="displayFieldCss('message')">
+            <div class="col-sm-12">
+                <label for="message" class="control-label required">Message</label><br>
+                <input type="text" formControlName="message"  class="text-input">
+                <app-display-error-component [displayError]="isFieldValid('message')" errorMsg="Missing message">
                 </app-display-error-component>
+            </div>
         </div>
-    </div>
-    <div class="form-group" [ngClass]="displayFieldCss('shouldAddToNewsletter')">
-        <div class="col-sm-12">
-            <label for="newsletter">Subscribe to Newsletter</label>
+        <div class="form-group" [ngClass]="displayFieldCss('shouldAddToNewsletter')">
+            <div class="col-sm-12">
+                <label for="newsletter">Subscribe to Newsletter</label>
                 <input type="checkbox" formControlName="shouldAddToNewsletter">
+            </div>
         </div>
-    </div>
-    <button class="btn btn-primary" (click)="onSubmit()">Submit</button>
+        <button class="btn btn-primary" (click)="onSubmit()">Submit</button>
 
-    <div class="row"  *ngIf="showMsg">
-        <div class="col-xs-12">
-          <p class="alert alert-success">
-              <strong>Thanks!!</strong> We'll get back to you soon!!
+        <div class="row" *ngIf="showMsg">
+            <div class="col-xs-12">
+                <p class="alert alert-success">
+                    <strong>Thanks!!</strong> We'll get back to you soon!!
 
-          </p>
+                </p>
+            </div>
         </div>
-      </div>
-</form>
+    </form>
+</div>
