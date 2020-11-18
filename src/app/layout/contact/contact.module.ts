@@ -7,8 +7,6 @@ import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
 
 import { ContactComponent } from './contact.component';
 import { ContactRoutingModule } from './contact-routing.module';
-import { DisplayErrorComponentComponent } from './display-error-component/display-error-component.component';
-import { TextfieldComponentComponent } from './textfield-component/textfield-component.component';
 
 @NgModule({
   imports: [
@@ -21,9 +19,7 @@ import { TextfieldComponentComponent } from './textfield-component/textfield-com
     RecaptchaFormsModule,
   ],
   declarations: [
-    ContactComponent,
-    DisplayErrorComponentComponent,
-    TextfieldComponentComponent
+    ContactComponent
   ],
   providers: []
 })
