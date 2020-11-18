@@ -1,5 +1,5 @@
 <div id="form-container">
-  <form [formGroup]="form" class="col-sm-8" >
+  <form [formGroup]="form" (ngSubmit)="form.valid && onSubmit()" class="col-sm-8" >
     <h1>Contact Us</h1>
     <div class="form-group">
         <label for="username">Name</label>
@@ -28,11 +28,11 @@
     </div>
     <div class="form-group">
       <label for="message">Message</label>
-      <input
+      <textarea
         [formControl]="form.get('message')"
         id="message" 
         type="text" 
-        class="form-control">
+        class="form-control"></textarea>
         <div *ngIf="form.get('message').touched && form.get('message').invalid" class="alert alert-danger">Message is required</div>
   </div>
   <div class="checkbox form-group">
@@ -40,81 +40,12 @@
       <input 
         [formControl]="form.get('shouldAddToNewsletter')"
         type="checkbox" 
-      >Subscribe to Newsletter
+      > Subscribe to Newsletter
     </label>
   </div>
     <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Sign Up</button>
+    <br>
+    <br>
+    <div *ngIf="success" class="alert alert-success">Your message has been submitted. We'll get back to you soon!!</div>
   </form>
 </div>
-  <!-- template variable #f -->
-  <!-- <form [formGroup]="form" #f="ngForm" (ngSubmit)="submit(f)">
-
-    <div class="form-group">
-        <label for="name">Name</label>
-        <input 
-          formControlName="name"
-          required 
-          minlength="3" 
-          maxlength="10" 
-          pattern="banana"
-          ngModel  
-          name="name" 
-          #name="ngModel"
-          (change)="log(name)"
-          id="name" 
-          type="text" 
-          class="form-control"
-        >
-        <div 
-          class="alert alert-danger" 
-          *ngIf="name.touched && !name.valid"
-        >
-          <div *ngIf="name.errors.required">
-            Name is required
-          </div>
-          <div *ngIf="name.errors.minlength">
-            Name should be {{ name.errors.minlength.requiredLength}} characters
-          </div>
-          <div *ngIf="name.errors.pattern">
-            Name doesn't match pattern
-          </div>
-
-        </div>
-    </div>
-    <div class="form-group">
-      <label for="email">Email</label>
-      <input 
-        formControlName="email"
-        ngModel 
-        name="email" 
-        id="email" 
-        type="text" 
-        class="form-control"
-      >
-    </div>
-    <div class="form-group">
-      <label for="message">Message</label>
-      <textarea 
-        formControlName="message"
-        ngModel 
-        name="message" 
-        class="form-control" 
-        id="message" 
-        cols="30" 
-        rows="10">
-      </textarea>
-    </div>
-    <div class="checkbox">
-      <label>
-        <input 
-          formControlName="shouldAddToNewsletter"
-          type="checkbox" 
-          ngModel name="shouldAddToNewsletter"
-        >Subscribe to Newsletter
-      </label>
-    </div>
-    <p>
-      {{ f.value | json }}
-    </p>
-  <button class="btn btn-primary" [disabled]="!f.valid">Submit</button>
-  </form> -->
