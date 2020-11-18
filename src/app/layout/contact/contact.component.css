@@ -1,7 +1,9 @@
 .form-control.ng-touched.ng-invalid{
     border: 2px solid red;
 }
-
+.is-invalid{
+    border: 2px solid red;
+}
 #form-container {
     position: relative;
     width: 100%;

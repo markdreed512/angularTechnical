@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
+import { FormGroup, FormControl, Validators } from '@angular/forms'
 
 @Component({
   selector: 'app-contact',
@@ -14,7 +14,7 @@ export class ContactComponent{
       shouldAddToNewsletter: new FormControl()
   })
 }
-  // onSubmit(){
+  // onsubmit(){
   //   console.log(this.form)
   // }
   // form = new FormGroup({
@@ -24,15 +24,6 @@ export class ContactComponent{
   //   shouldAddToNewsletter: new FormControl()
   // });
 
-//   get name(){
-//     return this.form.get('name');
-//   }
-//   get email(){
-//     return this.form.get('email')
-//   }
-//   get message(){
-//     return this.form.get('message')
-//   }
 
 //   log(x) {console.log(x);}
 //   submit(f) {
