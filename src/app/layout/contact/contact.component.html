@@ -1,5 +1,5 @@
 <div id="form-container">
-  <form [formGroup]="form" (ngSubmit)="form.valid && onSubmit()" class="col-sm-8" >
+  <form [formGroup]="form" (ngSubmit)="form.valid && onSubmit()" class="col-sm-8 " >
     <h1>Contact Us</h1>
     <div class="form-group">
         <label for="username">Name</label>
@@ -42,7 +42,7 @@
       > Subscribe to Newsletter
     </label>
   </div>
-    <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Sign Up</button>
+    <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
     <br>
     <br>
     <div *ngIf="success" class="alert alert-success">Your message has been submitted. We'll get back to you soon!!</div>
