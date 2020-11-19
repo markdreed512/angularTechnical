@@ -20,19 +20,4 @@ export class ContactComponent{
     this.form.reset()
   }
 }
-  // onsubmit(){
-  //   console.log(this.form)
-  // }
-  // form = new FormGroup({
-  //   name: new FormControl('', Validators.required),
-  //   email: new FormControl('', [Validators.required, Validators.email]),
-  //   message: new FormControl('', Validators.required),
-  //   shouldAddToNewsletter: new FormControl()
-  // });
-
-
-//   log(x) {console.log(x);}
-//   submit(f) {
-//     console.log(f);
-//   }
-// }
+  
